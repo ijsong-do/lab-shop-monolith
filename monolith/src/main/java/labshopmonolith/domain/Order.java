@@ -7,11 +7,13 @@ import java.util.List;
 import lombok.Data;
 import java.util.Date;
 
+
 @Entity
 @Table(name="Order_table")
 @Data
 
 public class Order  {
+
 
     
     @Id
@@ -53,10 +55,10 @@ public class Order  {
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
-        labshopmonolith.external.DecreaseStockCommand decreaseStockCommand = new labshopmonolith.external.DecreaseStockCommand();
+        labshopmonolith.external.DecreaseInventoryCommand decreaseInventoryCommand = new labshopmonolith.external.DecreaseInventoryCommand();
         // mappings goes here
         MonolithApplication.applicationContext.getBean(labshopmonolith.external.InventoryService.class)
-            .decreaseStock(/* get???(), */ decreaseStockCommand);
+            .decreaseInventory(/* get???(), */ decreaseInventoryCommand);
 
 
 
