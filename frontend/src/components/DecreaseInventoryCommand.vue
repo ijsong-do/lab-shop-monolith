@@ -2,11 +2,11 @@
 
     <v-card outlined>
         <v-card-title>
-            DecreaseStock
+            DecreaseInventory
         </v-card-title>
 
         <v-card-text>
-            <Number label="Qry" v-model="value.qry" :editMode="editMode"/>
+            <Number label="Qty" v-model="value.qty" :editMode="editMode"/>
         </v-card-text>
 
         <v-card-actions>
@@ -14,9 +14,9 @@
             <v-btn
                     color="deep-purple lighten-2"
                     text
-                    @click="decreaseStock"
+                    @click="decreaseInventory"
             >
-                DecreaseStock
+                DecreaseInventory
             </v-btn>
             
             <v-btn
@@ -34,7 +34,7 @@
 <script>
    
     export default {
-        name: 'DecreaseStockCommand',
+        name: 'DecreaseInventoryCommand',
         components:{},
         props: {},
         data: () => ({
@@ -42,13 +42,13 @@
             value: {},
         }),
         created() {
-            this.value.qry = 0;
+            this.value.qty = 0;
         },
         watch: {
         },
         methods: {
-            decreaseStock() {
-                this.$emit('decreaseStock', this.value);
+            decreaseInventory() {
+                this.$emit('decreaseInventory', this.value);
             },
             close() {
                 this.$emit('closeDialog');

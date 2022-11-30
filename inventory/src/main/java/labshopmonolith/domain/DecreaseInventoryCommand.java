@@ -5,10 +5,11 @@ import java.util.List;
 import java.util.Date;
 import lombok.Data;
 
-@Data
-public class DecreaseStockCommand {
 
-        private Integer qry;
+@Data
+public class DecreaseInventoryCommand {
+
+        private Integer qty;
 
 
 }
